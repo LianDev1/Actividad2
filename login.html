@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Utileria</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .campo { margin-bottom: 15px; }
+        input { padding: 8px; width: 250px; display: block; margin-top: 5px; }
+        button { padding: 10px 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h2>Iniciar Sesión</h2>
+
+    <form id="formLogin">
+        <div class="campo">
+            <label>Correo Electrónico:</label>
+            <input type="text" id="correoInput" placeholder="usuario@gmail.com">
+        </div>
+
+        <div class="campo">
+            <label>Contraseña:</label>
+            <input type="password" id="passInput" placeholder="Clave123!">
+        </div>
+
+        <div class="campo">
+            <label>Fecha de Nacimiento:</label>
+            <input type="date" id="fechaInput">
+        </div>
+
+        <button type="submit">Ingresar</button>
+    </form>
+
+    <!-- 1. PRIMERO SE IMPORTA LA LIBRERÍA -->
+    <script src="js/utileria.js"></script>
+
+    <!-- 2. DESPUÉS SE EJECUTA LA LÓGICA CON ALERTA -->
+    <script>
+        document.getElementById('formLogin').addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita recargar la página
+
+            var correo = document.getElementById('correoInput').value;
+            var pass = document.getElementById('passInput').value;
+            var fecha = document.getElementById('fechaInput').value;
+
+            // Validación de correo
+            if (!validarCorreo(correo)) {
+                alert("Correo inválido. Ejemplo: usuario@gmail.com");
+                return;
+            }
+
+            // Validación de contraseña
+            if (!validarPassword(pass)) {
+                alert("La contraseña debe tener al menos 8 caracteres, 1 mayúscula, 1 número y 1 símbolo.");
+                return;
+            }
+
+            // Validación de fecha
+            if (!fecha) {
+                alert("Selecciona tu fecha de nacimiento.");
+                return;
+            }
+
+            // Cálculo con tu librería
+            var edad = calcularEdad(fecha);
+            var esMayor = esMayorDeEdad(fecha);
+
+            // Alerta final con éxito
+            alert("¡Acceso correcto! BIENVENIDO\nTienes " + edad + " años (" + (esMayor ? "Mayor de edad" : "Menor de edad") + ")");
+        });
+    </script>
+
+</body>
+</html>
