@@ -62,7 +62,25 @@ console.log(esPar); // true
 
 ## Capturas de Pantalla
 
-*(Inserta aquí las capturas de la consola del navegador ejecutando las funciones)*
+### 1. Ejecución de Funciones en Consola
+
+![Pruebas de funciones en la consola](img/consola-funciones.png)
+*Figura 1: Pruebas en tiempo real desde la consola del navegador ejecutando las funciones `validarCorreo`, `validarPassword` y `calcularEdad`.*
+
+### 2. Formulario y Ventana Modal con Edad Calculada
+
+![Resultado en Modal](img/modal-resultado.png)
+*Figura 2: Integración del formulario de registro y despliegue de la edad calculada dentro de la ventana modal mediante la librería.*
+
+### 3. Validaciones del Formulario
+
+![Mensajes de Error](img/formulario-errores.png)
+*Figura 3: Activación de las alertas de error en rojo al intentar enviar datos vacíos o con formato incorrecto.*
+
+### 4. Módulo de Login
+
+![Pantalla de Login](img/login-vista.png)
+*Figura 4: Formulario de inicio de sesión integrando las funciones `validarCorreo` y `validarPassword`.*
 
 ---
 
