@@ -84,6 +84,6 @@ console.log(esPar); // true
 
 ---
 
-## Video Promocional (Máx. 1 min)
+## Video Promocional
 
 [Enlace al video de demostración aquí]
