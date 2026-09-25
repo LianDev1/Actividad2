@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro - Utileria</title>
+    <title>Formulario - Utileria</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -17,19 +17,19 @@
         <h2>Formulario de Registro</h2>
         <form id="formRegistro">
             <div class="campo">
-                <label>Nombre:</label>
+                <label>Nombre Completo:</label>
                 <input type="text" id="nombre">
                 <span class="error" id="err-nombre">Solo se permiten letras.</span>
             </div>
 
             <div class="campo">
-                <label>Correo:</label>
+                <label>Correo Electrónico:</label>
                 <input type="text" id="correo">
-                <span class="error" id="err-correo">Correo electrónico inválido.</span>
+                <span class="error" id="err-correo">Correo electrónico no válido.</span>
             </div>
 
             <div class="campo">
-                <label>Teléfono (máx 10 dígitos):</label>
+                <label>Teléfono (máx. 10 dígitos):</label>
                 <input type="text" id="telefono">
                 <span class="error" id="err-telefono">Máximo 10 dígitos.</span>
             </div>
@@ -40,16 +40,16 @@
                 <span class="error" id="err-fecha">Selecciona una fecha válida.</span>
             </div>
 
-            <button type="submit">Registrar</button>
+            <button type="submit">Enviar Datos</button>
         </form>
     </div>
 
-    <!-- Modal para mostrar la edad -->
+    <!-- Ventana Modal para la Edad -->
     <div class="modal" id="modalEdad">
         <div class="modal-contenido">
             <h3>Resultado</h3>
-            <p id="textoEdad"></p>
-            <button id="btnCerrarModal">Cerrar</button>
+            <p id="textoModal"></p>
+            <button id="btnCerrar">Cerrar</button>
         </div>
     </div>
 
@@ -65,7 +65,6 @@
 
             let valido = true;
 
-            // Validar Nombre
             if (!soloLetras(nombre) || nombre === "") {
                 document.getElementById('err-nombre').style.display = 'block';
                 valido = false;
@@ -73,7 +72,6 @@
                 document.getElementById('err-nombre').style.display = 'none';
             }
 
-            // Validar Correo
             if (!validarCorreo(correo)) {
                 document.getElementById('err-correo').style.display = 'block';
                 valido = false;
@@ -81,7 +79,6 @@
                 document.getElementById('err-correo').style.display = 'none';
             }
 
-            // Validar Teléfono
             if (!validarLongitud(telefono, 10) || telefono === "") {
                 document.getElementById('err-telefono').style.display = 'block';
                 valido = false;
@@ -89,7 +86,6 @@
                 document.getElementById('err-telefono').style.display = 'none';
             }
 
-            // Validar Fecha
             if (!fechaNac) {
                 document.getElementById('err-fecha').style.display = 'block';
                 valido = false;
@@ -97,20 +93,19 @@
                 document.getElementById('err-fecha').style.display = 'none';
             }
 
-            // Si todo es válido, mostrar modal con la edad calculada
             if (valido) {
                 let edad = calcularEdad(fechaNac);
-                let mayor = esMayorDeEdad(fechaNac);
+                let esMayor = esMayorDeEdad(fechaNac);
                 let nombreMayus = convertirMayusculas(nombre);
 
-                document.getElementById('textoEdad').innerHTML = 
-                    "Hola <strong>" + nombreMayus + "</strong>.<br>Tienes <strong>" + edad + " años</strong> (" + (mayor ? "Mayor de edad" : "Menor de edad") + ").";
-                
+                document.getElementById('textoModal').innerHTML = 
+                    "Hola <strong>" + nombreMayus + "</strong>.<br>Tienes <strong>" + edad + " años</strong> (" + (esMayor ? "Mayor de edad" : "Menor de edad") + ").";
+
                 document.getElementById('modalEdad').style.display = 'flex';
             }
         });
 
-        document.getElementById('btnCerrarModal').addEventListener('click', function() {
+        document.getElementById('btnCerrar').addEventListener('click', function() {
             document.getElementById('modalEdad').style.display = 'none';
         });
     </script>

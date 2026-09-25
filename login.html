@@ -19,16 +19,16 @@
             <div class="campo">
                 <label>Correo Electrónico:</label>
                 <input type="text" id="loginCorreo">
-                <span class="error" id="err-loginCorreo">Correo no válido.</span>
+                <span class="error" id="err-loginCorreo">Correo electrónico no válido.</span>
             </div>
 
             <div class="campo">
                 <label>Contraseña:</label>
                 <input type="password" id="loginPass">
-                <span class="error" id="err-loginPass">Mín. 8 caracteres, 1 mayúscula, 1 número y 1 símbolo.</span>
+                <span class="error" id="err-loginPass">Mínimo 8 caracteres, 1 mayúscula, 1 minúscula, 1 número y 1 carácter especial.</span>
             </div>
 
-            <button type="submit">Ingresar</button>
+            <button type="submit">Acceder</button>
         </form>
     </div>
 
@@ -40,14 +40,14 @@
             let correo = document.getElementById('loginCorreo').value;
             let pass = document.getElementById('loginPass').value;
 
-            let correoOk = validarCorreo(correo);
-            let passOk = validarPassword(pass);
+            let correoValido = validarCorreo(correo);
+            let passValida = validarPassword(pass);
 
-            document.getElementById('err-loginCorreo').style.display = correoOk ? 'none' : 'block';
-            document.getElementById('err-loginPass').style.display = passOk ? 'none' : 'block';
+            document.getElementById('err-loginCorreo').style.display = correoValido ? 'none' : 'block';
+            document.getElementById('err-loginPass').style.display = passValida ? 'none' : 'block';
 
-            if (correoOk && passOk) {
-                alert("✅ ¡Inicio de sesión exitoso!");
+            if (correoValido && passValida) {
+                alert("✅ Inicio de sesión exitoso");
             }
         });
     </script>

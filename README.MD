@@ -1,13 +1,13 @@
 # Librería utileria.js
 
-**Nombre:** Garcia Cisneros Jonathan Julian  
-**Problema que resuelve:** Proporciona un conjunto de funciones ligeras en JavaScript Vanilla para realizar validaciones de formularios (correo, contraseña, solo letras, longitud), cálculos de fechas/edad y formateo de datos sin depender de librerías externas.
+**Nombre:** Julian  
+**Problema que resuelve:** `utileria.js` es una librería en JavaScript puro que simplifica la validación de formularios (correos, contraseñas seguras, números y letras), el cálculo de fechas/edad y transformaciones de texto sin depender de librerías o frameworks externos.
 
 ---
 
 ## Instalación
 
-Incluye el archivo script en tu proyecto HTML antes del cierre de la etiqueta `</body>`:
+Para utilizar esta librería en tu proyecto HTML, incluye el script antes del cierre del cuerpo (`</body>`):
 
 ```html
 <script src="js/utileria.js"></script>
@@ -19,48 +19,53 @@ Incluye el archivo script en tu proyecto HTML antes del cierre de la etiqueta `<
 
 ### 1. Validar Correo Electrónico
 ```javascript
-if (validarCorreo("usuario@gmail.com")) {
-    console.log("Correo válido");
-}
+let esCorreoValido = validarCorreo("usuario@correo.com");
+console.log(esCorreoValido); // true
 ```
 
-### 2. Validar Solo Letras
+### 2. Solo Letras
 ```javascript
-console.log(soloLetras("Juan Perez")); // true
-console.log(soloLetras("Juan123"));    // false
+let esTexto = soloLetras("Juan Pérez");
+console.log(esTexto); // true
 ```
 
-### 3. Validar Longitud
+### 3. Validar Longitud de un Número
 ```javascript
-console.log(validarLongitud("9511234567", 10)); // true
+let longitudCorrecta = validarLongitud("9511234567", 10);
+console.log(longitudCorrecta); // true
 ```
 
 ### 4. Calcular Edad y Mayoría de Edad
 ```javascript
-let edad = calcularEdad("2000-05-15");
-let esMayor = esMayorDeEdad("2000-05-15");
-console.log("Edad: " + edad + ", Mayoría: " + esMayor);
+let edad = calcularEdad("2002-05-20");
+let esMayor = esMayorDeEdad("2002-05-20");
+console.log(edad);    // Edad en número entero
+console.log(esMayor); // true
 ```
 
 ### 5. Validar Contraseña Segura
 ```javascript
-console.log(validarPassword("Clave123!")); // true
+let esPasswordValida = validarPassword("Password123!");
+console.log(esPasswordValida); // true
 ```
 
-### 6. Funciones Propias
+### 6. Funciones Propias (Sección Libre)
 ```javascript
-console.log(convertirMayusculas("hola mundo")); // "HOLA MUNDO"
-console.log(esNumeroPar(4));                    // true
+let mayus = convertirMayusculas("hola mundo");
+console.log(mayus); // "HOLA MUNDO"
+
+let esPar = esNumeroPar(8);
+console.log(esPar); // true
 ```
 
 ---
 
-## Capturas de pantalla
+## Capturas de Pantalla
 
-*(Inserta aquí imágenes ejecutando las funciones en la consola de tu navegador)*
+*(Inserta aquí las capturas de la consola del navegador ejecutando las funciones)*
 
 ---
 
-## Video Promocional (1 Minuto)
+## Video Promocional (Máx. 1 min)
 
 [Enlace al video de demostración aquí]
