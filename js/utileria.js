@@ -11,6 +11,11 @@
         return patron.test(correo);
     }
 
+    function validarUsuario(usuario) {
+        let patron = /^[a-zA-Z0-9]+$/;
+        return patron.test(usuario);
+    }
+
     /**
      * @param {string} texto
      * @returns {boolean}

@@ -48,19 +48,19 @@
 
             // Validación de correo
             if (!validarCorreo(correo)) {
-                alert("❌ Correo inválido. Ejemplo: usuario@gmail.com");
+                alert("Correo inválido. Ejemplo: usuario@gmail.com");
                 return;
             }
 
             // Validación de contraseña
             if (!validarPassword(pass)) {
-                alert("❌ La contraseña debe tener al menos 8 caracteres, 1 mayúscula, 1 número y 1 símbolo.");
+                alert("La contraseña debe tener al menos 8 caracteres, 1 mayúscula, 1 número y 1 símbolo.");
                 return;
             }
 
             // Validación de fecha
             if (!fecha) {
-                alert("❌ Selecciona tu fecha de nacimiento.");
+                alert("Selecciona tu fecha de nacimiento.");
                 return;
             }
 
@@ -69,7 +69,10 @@
             var esMayor = esMayorDeEdad(fecha);
 
             // Alerta final con éxito
-            alert("✅ ¡Acceso correcto!\nTienes " + edad + " años (" + (esMayor ? "Mayor de edad" : "Menor de edad") + ")");
+            alert("¡Acceso correcto!\nTienes " + edad + " años (" + (esMayor ? "Mayor de edad" : "Menor de edad") + ")");
+            alert("¡Bienvenido!");
+            alert(""+correo+"");
+            
         });
     </script>
 
